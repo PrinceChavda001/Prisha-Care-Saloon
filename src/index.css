@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Noto Serif", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  
+  --color-primary: #b80035;
+  --color-primary-container: #e11d48;
+  --color-on-primary: #ffffff;
+  
+  --color-surface: #fff8f8;
+  --color-surface-container-low: #fbf1f3;
+  --color-surface-container: #f5ebed;
+  --color-surface-container-high: #efe6e8;
+  --color-surface-container-highest: #eae0e2;
+  --color-surface-container-lowest: #ffffff;
+  
+  --color-on-surface: #1f1a1c;
+  --color-on-surface-variant: #5c3f40;
+  
+  --color-outline: #906f70;
+  --color-outline-variant: #e5bdbe;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased selection:bg-primary/20 selection:text-primary;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@layer components {
+  .glass-nav {
+    @apply bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10;
+  }
+  
+  .primary-gradient {
+    @apply bg-linear-to-br from-primary to-primary-container;
+  }
+  
+  .ambient-shadow {
+    box-shadow: 0 12px 40px rgba(31, 26, 28, 0.06);
+  }
+  
+  .ambient-shadow-lg {
+    box-shadow: 0 20px 60px rgba(31, 26, 28, 0.08);
+  }
+}
+
+.markdown-body {
+  @apply font-sans;
+}
